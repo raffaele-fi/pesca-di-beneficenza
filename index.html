@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="format-detection" content="address=no">
+  
   <title>Pesca di Beneficenza San Paolo</title>
   
   <style>
@@ -39,6 +42,9 @@
     .prize-where{font-size:24px;font-weight:400;display: inline;}
     .prize-where strong{font-weight:700;}
     
+    /* NUOVO: Protezione CSS aggiuntiva contro link forzati dai browser */
+    .prize-where a, .prize-where span { color: inherit !important; text-decoration: none !important; }
+    
     .address-sep { display: inline; }
     
     .footer-text-block{margin-top:2.25rem;text-align:center;margin-bottom:2.25rem;}
@@ -66,7 +72,6 @@
       .title-block { margin-bottom: 2.5rem; }
       .title-main { font-size: 48px; }
       
-      /* Modificato: Sottotitolo mobile con dimensione al 120% e interlinea regolata a 1.2 */
       .title-sub { 
         font-size: 21.6px; 
         line-height: 1.2; 
