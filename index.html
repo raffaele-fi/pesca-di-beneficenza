@@ -1,87 +1,122 @@
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Roboto+Condensed:wght@400;600;700&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0;}
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesca di Beneficenza San Paolo</title>
   
-  /* ==========================================
-     STILE BASE / DESKTOP (Computer)
-     ========================================== */
-  .pg{background:#B3D7E7;min-height:100vh;padding:6rem 5rem 0rem;font-family:'Roboto Condensed',sans-serif;display: flex;flex-direction: column;}
-  
-  .title-block{text-align:center;margin-bottom:4rem;}
-  
-  .title-main{font-family:'Lora',serif;font-size:78px;font-weight:700;color:#151C28;line-height:1.05;}
-  
-  .title-sub{font-size:25.5px;font-weight:600;color:#151C28;margin-top:12px;font-family:'Lora',serif;}
-  .title-sub span{color:#1F718C;}
-  
-  .card{background:#DBEBF4;border-radius:10px;padding: 32px 56px;margin-bottom:1.875rem;}
-  
-  .card.prize-top { background: #FFFFFF; }
-  
-  .section-label{font-family:'Lora',serif;font-size:33px;font-weight:700;color:#1F718C;margin-bottom:0.9rem;}
-  
-  .prize-entry { font-size: 27px; color: #151C28; font-family:'Roboto Condensed',sans-serif; line-height: 1.4; }
-  .prize-name{font-size:27px;font-weight:700;display: inline;}
-  .prize-where{font-size:24px;font-weight:400;display: inline;}
-  .prize-where strong{font-weight:700;}
-  
-  .footer-text-block{margin-top:2.25rem;text-align:center;margin-bottom:2.25rem;}
-  
-  .footer-text{font-size:27px;color:#151C28;line-height:1.5;font-family:'Roboto Condensed',sans-serif; white-space: nowrap;}
-  .footer-text strong{font-weight:700;}
-  
-  /* Nasconde il br su desktop */
-  .footer-text br { display: none; } 
-
-  .footer-image{margin-top:auto;text-align:center;line-height: 0;}
-  .footer-image img{
-    width: 40%;               
-    height: 650px;            
-    object-fit: cover;        
-    object-position: top;     
-    display: inline-block;
-    vertical-align: bottom;
-  }
-
-  /* ==========================================
-     STILE SOLO PER MOBILE (Smartphone)
-     Si attiva sotto i 768px di larghezza
-     ========================================== */
-  @media (max-width: 768px) {
-    /* Forza il "presso" ad andare a capo sotto il premio */
-    .prize-name {
-      display: block; 
-    }
-    .prize-where {
-      display: block;
-      margin-top: 4px;
-    }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Roboto+Condensed:wght@400;600;700&display=swap');
     
-    /* Mostra il br nel footer solo su mobile */
-    .footer-text {
-      white-space: normal;
-    }
-    .footer-text br {
-      display: inline; 
-    }
+    *{box-sizing:border-box;margin:0;padding:0;}
     
-    /* Gestione immagine: riempie lo schermo mantenendo il taglio */
+    /* ==========================================
+       STILE BASE / DESKTOP (Computer)
+       ========================================== */
     .pg {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+      background:#B3D7E7;
+      min-height:100vh;
+      padding: 6rem 5rem 0rem;
+      font-family:'Roboto Condensed',sans-serif;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
     }
-    .title-block, .card, .footer-text-block {
-      margin-left: 1.25rem;
-      margin-right: 1.25rem;
-    }
-    .footer-image img {
-      width: 100%;    /* Riempie la larghezza dello schermo */
-      height: 450px;  /* Altezza proporzionata per mobile mantenendo object-fit */
-    }
-  }
-</style>
+    
+    .title-block{text-align:center;margin-bottom:4rem;}
+    .title-main{font-family:'Lora',serif;font-size:78px;font-weight:700;color:#151C28;line-height:1.05;}
+    .title-sub{font-size:25.5px;font-weight:600;color:#151C28;margin-top:12px;font-family:'Lora',serif;}
+    .title-sub span{color:#1F718C;}
+    
+    .card{background:#DBEBF4;border-radius:10px;padding: 32px 56px;margin-bottom:1.875rem;}
+    .card.prize-top { background: #FFFFFF; }
+    .section-label{font-family:'Lora',serif;font-size:33px;font-weight:700;color:#1F718C;margin-bottom:0.9rem;}
+    
+    .prize-entry { font-size: 27px; color: #151C28; font-family:'Roboto Condensed',sans-serif; line-height: 1.4; white-space: nowrap; }
+    .prize-name{font-size:27px;font-weight:700;display: inline;}
+    .prize-where{font-size:24px;font-weight:400;display: inline;}
+    .prize-where strong{font-weight:700;}
+    
+    /* Lo span che contiene il punto elenco e l'indirizzo */
+    .address-sep { display: inline; }
+    
+    .footer-text-block{margin-top:2.25rem;text-align:center;margin-bottom:2.25rem;}
+    .footer-text{font-size:27px;color:#151C28;line-height:1.5;font-family:'Roboto Condensed',sans-serif; white-space: nowrap;}
+    .footer-text strong{font-weight:700;}
 
-<div class="pg">
+    .footer-image{margin-top:auto;text-align:center;line-height: 0;}
+    .footer-image img {
+      width: 40%;
+      height: 650px;
+      object-fit: cover;
+      object-position: top;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    /* ==========================================
+       STILE SOLO PER MOBILE (Smartphone)
+       ========================================== */
+    @media (max-width: 768px) {
+      .pg {
+        padding: 4rem 1.25rem 0rem;
+      }
+      
+      .title-block { margin-bottom: 2.5rem; }
+      .title-main { font-size: 48px; }
+      .title-sub { font-size: 18px; }
+      .card { padding: 24px 32px; margin-bottom: 1.25rem; }
+      .section-label { font-size: 24px; }
+      
+      .prize-entry { 
+        white-space: normal; 
+        font-size: 20px;
+      }
+      
+      /* Il nome del premio va a capo */
+      .prize-name { 
+        font-size: 20px; 
+        display: block; 
+        margin-bottom: 4px;
+      }
+      
+      /* Il "presso..." va a capo */
+      .prize-where { 
+        font-size: 18px; 
+        display: block; 
+        margin-bottom: 4px;
+      }
+      
+      /* MODIFICATO: Nasconde completamente il punto elenco e manda a capo l'indirizzo su mobile */
+      .address-sep {
+        display: block;
+      }
+      .address-sep .bullet {
+        display: none; /* Cancella il punto elenco visivo */
+      }
+      
+      .footer-text {
+        font-size: 20px;
+        white-space: normal;
+      }
+      
+      .footer-image {
+        position: relative;
+        width: 100vw;
+        margin-left: -1.25rem;
+      }
+      .footer-image img {
+        width: 100vw !important;
+        min-width: 100vw !important;
+        height: 450px; 
+        margin-left: 0;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body class="pg">
+
   <div class="title-block">
     <div class="title-main">PESCA di<br>BENEFICENZA</div>
     <div class="title-sub">Festa di San Paolo Apostolo • <span>29 Giugno 2026</span></div>
@@ -91,7 +126,7 @@
     <div class="section-label">1° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">PIZZA X2 PERSONE</div>
-      <div class="prize-where">presso <strong>Signora Pummarulè</strong> • Via Luigi Liguori, 2</div>
+      <div class="prize-where">presso <strong>Signora Pummarulè</strong><span class="address-sep"><span class="bullet"> • </span>Via Luigi Liguori, 2</span></div>
     </div>
   </div>
 
@@ -99,7 +134,7 @@
     <div class="section-label">2° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">PIZZA X2 PERSONE</div>
-      <div class="prize-where">presso <strong>Màdia</strong> • Via Irno, 2</div>
+      <div class="prize-where">presso <strong>Màdia</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 2</span></div>
     </div>
   </div>
 
@@ -107,7 +142,7 @@
     <div class="section-label">3° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">PIZZA X2 PERSONE</div>
-      <div class="prize-where">presso <strong>COMPAGNIA DEL CONCORD ON THE SEA</strong> • Via Fratelli De Mattia, 65</div>
+      <div class="prize-where">presso <strong>COMPAGNIA DEL CONCORD ON THE SEA</strong><span class="address-sep"><span class="bullet"> • </span>Via Fratelli De Mattia, 65</span></div>
     </div>
   </div>
 
@@ -115,7 +150,7 @@
     <div class="section-label">4° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO REGALO DA 30€</div>
-      <div class="prize-where">presso <strong>Macelleria da Enzo</strong> • Via Luigi Guercio, 67</div>
+      <div class="prize-where">presso <strong>Macelleria da Enzo</strong><span class="address-sep"><span class="bullet"> • </span>Via Luigi Guercio, 67</span></div>
     </div>
   </div>
 
@@ -123,7 +158,7 @@
     <div class="section-label">5° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">ORCHIDEA CON VASO</div>
-      <div class="prize-where">presso <strong>Enzo e Lucia Carrella</strong> • Via Silvio Baratta, 115/117</div>
+      <div class="prize-where">presso <strong>Enzo e Lucia Carrella</strong><span class="address-sep"><span class="bullet"> • </span>Via Silvio Baratta, 115/117</span></div>
     </div>
   </div>
 
@@ -131,7 +166,7 @@
     <div class="section-label">6° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO REGALO DA 20€</div>
-      <div class="prize-where">presso <strong>StiPolli</strong> • Via Nizza, 214</div>
+      <div class="prize-where">presso <strong>StiPolli</strong><span class="address-sep"><span class="bullet"> • </span>Via Nizza, 214</span></div>
     </div>
   </div>
 
@@ -139,7 +174,7 @@
     <div class="section-label">7° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO TORTA O DOLCI</div>
-      <div class="prize-where">presso <strong>Pasticceria Beatrice</strong> • Via Irno, 37</div>
+      <div class="prize-where">presso <strong>Pasticceria Beatrice</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 37</span></div>
     </div>
   </div>
 
@@ -147,7 +182,7 @@
     <div class="section-label">8° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO TAGLIO O PIEGA</div>
-      <div class="prize-where">presso <strong>Parrucchiere Mastrangelo</strong> • Via Irno, 135</div>
+      <div class="prize-where">presso <strong>Parrucchiere Mastrangelo</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 135</span></div>
     </div>
   </div>
 
@@ -155,7 +190,7 @@
     <div class="section-label">9° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">TAGLIO</div>
-      <div class="prize-where">presso <strong>NARCISIO HAIR STUDIO</strong> • Via Lauro Grotto, 1</div>
+      <div class="prize-where">presso <strong>NARCISIO HAIR STUDIO</strong><span class="address-sep"><span class="bullet"> • </span>Via Lauro Grotto, 1</span></div>
     </div>
   </div>
 
@@ -163,7 +198,7 @@
     <div class="section-label">10° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">TAGLIO</div>
-      <div class="prize-where">presso <strong>Parrucchiere R&M</strong> • Via de Falco Giovanni</div>
+      <div class="prize-where">presso <strong>Parrucchiere R&M</strong><span class="address-sep"><span class="bullet"> • </span>Via de Falco Giovanni</span></div>
     </div>
   </div>
 
@@ -171,7 +206,7 @@
     <div class="section-label">11° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">TAGLIO</div>
-      <div class="prize-where">presso <strong>Barbiere Ferdinando</strong> • Via Irno, 105</div>
+      <div class="prize-where">presso <strong>Barbiere Ferdinando</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 105</span></div>
     </div>
   </div>
 
@@ -179,7 +214,7 @@
     <div class="section-label">12° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">TAGLIO</div>
-      <div class="prize-where">presso <strong>Acconciatura da Ciro</strong> • Via Luigi Liguori, 15</div>
+      <div class="prize-where">presso <strong>Acconciatura da Ciro</strong><span class="address-sep"><span class="bullet"> • </span>Via Luigi Liguori, 15</span></div>
     </div>
   </div>
 
@@ -187,7 +222,7 @@
     <div class="section-label">13° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO DI 10€</div>
-      <div class="prize-where">presso <strong>Fruttivendolo Lupin</strong> • Via Alfredo Capone, 2/4</div>
+      <div class="prize-where">presso <strong>Fruttivendolo Lupin</strong><span class="address-sep"><span class="bullet"> • </span>Via Alfredo Capone, 2/4</span></div>
     </div>
   </div>
 
@@ -195,7 +230,7 @@
     <div class="section-label">14° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO SPESA 10€</div>
-      <div class="prize-where">presso <strong>FRUTTA e VERDURA</strong> • Via Irno, 53</div>
+      <div class="prize-where">presso <strong>FRUTTA e VERDURA</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 53</span></div>
     </div>
   </div>
 
@@ -203,7 +238,7 @@
     <div class="section-label">15° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">CONSUMAZIONE X2 PERSONE</div>
-      <div class="prize-where">presso <strong>Caffè Bellini</strong> • Via Irno, 13</div>
+      <div class="prize-where">presso <strong>Caffè Bellini</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 13</span></div>
     </div>
   </div>
 
@@ -211,7 +246,7 @@
     <div class="section-label">16° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">CONSUMAZIONE X2 PERSONE</div>
-      <div class="prize-where">presso <strong>Bar Otus Gioia</strong> • Via Irno, 2</div>
+      <div class="prize-where">presso <strong>Bar Otus Gioia</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 2</span></div>
     </div>
   </div>
 
@@ -219,7 +254,7 @@
     <div class="section-label">17° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">COLAZIONE X2 PERSONE</div>
-      <div class="prize-where">presso <strong>Federica Caffè</strong> • Via Irno, 121/123</div>
+      <div class="prize-where">presso <strong>Federica Caffè</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 121/123</span></div>
     </div>
   </div>
 
@@ -227,7 +262,7 @@
     <div class="section-label">18° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">CONSUMAZIONE X2 PERSONE A SCELTA</div>
-      <div class="prize-where">presso <strong>Adore Gelato & Caffè</strong> • Via Irno, 431</div>
+      <div class="prize-where">presso <strong>Adore Gelato & Caffè</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 431</span></div>
     </div>
   </div>
 
@@ -235,7 +270,7 @@
     <div class="section-label">19° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">1 LAVAGGIO</div>
-      <div class="prize-where">presso <strong>Lavanderia Mura</strong> • Via Luigi Liguori, 12</div>
+      <div class="prize-where">presso <strong>Lavanderia Mura</strong><span class="address-sep"><span class="bullet"> • </span>Via Luigi Liguori, 12</span></div>
     </div>
   </div>
 
@@ -243,16 +278,17 @@
     <div class="section-label">20° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO REGALO 5€</div>
-      <div class="prize-where">presso <strong>Macelleria Florio Raffaele</strong> • Via Alfredo Capone, 73</div>
+      <div class="prize-where">presso <strong>Macelleria Florio Raffaele</strong><span class="address-sep"><span class="bullet"> • </span>Via Alfredo Capone, 73</span></div>
     </div>
   </div>
 
   <div class="footer-text-block">
-    <div class="footer-text">L'estrazione avverrà <strong>il giorno 29 giugno</strong><br>presso i locali della Parrocchia</div>
+    <div class="footer-text">L'estrazione avverrà <strong>il giorno 29 giugno</strong> presso i locali della Parrocchia</div>
   </div>
 
   <div class="footer-image">
     <img src="https://raw.githubusercontent.com/raffaele-fi/lottery/refs/heads/main/San-Paolo.png" alt="San Paolo Apostolo">
   </div>
 
-</div>
+</body>
+</html>
