@@ -25,8 +25,11 @@
     
     .title-block{text-align:center;margin-bottom:4rem;}
     .title-main{font-family:'Lora',serif;font-size:78px;font-weight:700;color:#151C28;line-height:1.05;}
+    
     .title-sub{font-size:25.5px;font-weight:600;color:#151C28;margin-top:12px;font-family:'Lora',serif;}
     .title-sub span{color:#1F718C;}
+    /* Il separatore del sottotitolo su desktop è visibile inline */
+    .title-sub .sub-sep { display: inline; }
     
     .card{background:#DBEBF4;border-radius:10px;padding: 32px 56px;margin-bottom:1.875rem;}
     .card.prize-top { background: #FFFFFF; }
@@ -37,7 +40,6 @@
     .prize-where{font-size:24px;font-weight:400;display: inline;}
     .prize-where strong{font-weight:700;}
     
-    /* Lo span che contiene il punto elenco e l'indirizzo */
     .address-sep { display: inline; }
     
     .footer-text-block{margin-top:2.25rem;text-align:center;margin-bottom:2.25rem;}
@@ -64,7 +66,12 @@
       
       .title-block { margin-bottom: 2.5rem; }
       .title-main { font-size: 48px; }
-      .title-sub { font-size: 18px; }
+      
+      /* MODIFICATO: Sottotitolo a capo e senza punto elenco su mobile */
+      .title-sub { font-size: 18px; line-height: 1.4; }
+      .title-sub .sub-sep { display: none; }
+      .title-sub span { display: block; margin-top: 4px; }
+      
       .card { padding: 24px 32px; margin-bottom: 1.25rem; }
       .section-label { font-size: 24px; }
       
@@ -73,28 +80,30 @@
         font-size: 20px;
       }
       
-      /* Il nome del premio va a capo */
       .prize-name { 
         font-size: 20px; 
         display: block; 
         margin-bottom: 4px;
       }
       
-      /* Il "presso..." va a capo */
       .prize-where { 
         font-size: 18px; 
         display: block; 
         margin-bottom: 4px;
       }
       
-      /* MODIFICATO: Nasconde completamente il punto elenco e manda a capo l'indirizzo su mobile */
       .address-sep {
         display: block;
       }
       .address-sep .bullet {
-        display: none; /* Cancella il punto elenco visivo */
+        display: none; 
       }
       
+      /* MODIFICATO: Spaziature del testo finale ridotte di 1/3 su mobile */
+      .footer-text-block {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
       .footer-text {
         font-size: 20px;
         white-space: normal;
@@ -119,7 +128,7 @@
 
   <div class="title-block">
     <div class="title-main">PESCA di<br>BENEFICENZA</div>
-    <div class="title-sub">Festa di San Paolo Apostolo • <span>29 Giugno 2026</span></div>
+    <div class="title-sub">Festa di San Paolo Apostolo<span class="sub-sep"> • </span><span>29 Giugno 2026</span></div>
   </div>
 
   <div class="card prize-top">
@@ -142,7 +151,7 @@
     <div class="section-label">3° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">PIZZA X2 PERSONE</div>
-      <div class="prize-where">presso <strong>COMPAGNIA DEL CONCORD ON THE SEA</strong><span class="address-sep"><span class="bullet"> • </span>Via Fratelli De Mattia, 65</span></div>
+      <div class="prize-where">presso <strong>Compagnia del Concord On The Sea</strong><span class="address-sep"><span class="bullet"> • </span>Via Fratelli De Mattia, 65</span></div>
     </div>
   </div>
 
@@ -190,7 +199,7 @@
     <div class="section-label">9° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">TAGLIO</div>
-      <div class="prize-where">presso <strong>NARCISIO HAIR STUDIO</strong><span class="address-sep"><span class="bullet"> • </span>Via Lauro Grotto, 1</span></div>
+      <div class="prize-where">presso <strong>Narciso Hair Studio</strong><span class="address-sep"><span class="bullet"> • </span>Via Lauro Grotto, 1</span></div>
     </div>
   </div>
 
@@ -230,7 +239,7 @@
     <div class="section-label">14° Premio</div>
     <div class="prize-entry">
       <div class="prize-name">BUONO SPESA 10€</div>
-      <div class="prize-where">presso <strong>FRUTTA e VERDURA</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 53</span></div>
+      <div class="prize-where">presso <strong>Frutta e Verdura</strong><span class="address-sep"><span class="bullet"> • </span>Via Irno, 53</span></div>
     </div>
   </div>
 
